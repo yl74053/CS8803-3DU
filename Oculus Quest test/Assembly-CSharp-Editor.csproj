@@ -89,6 +89,8 @@
     <Compile Include="Assets\Oculus\Spatializer\editor\ONSPPropagationMaterialEditor.cs" />
     <Compile Include="Assets\Oculus\Spatializer\editor\ONSPPropagationSerializationManager.cs" />
     <Compile Include="Assets\Oculus\Spatializer\editor\ONSPReflectionCustomGUI.cs" />
+    <Compile Include="Assets\RemoteHandsTracking\Editor\InspectorButton.cs" />
+    <Compile Include="Assets\RemoteHandsTracking\Editor\ShowOnlyDrawer.cs" />
     <Reference Include="UnityEditor.TestRunner">
       <HintPath>C:/Users/Yi Li/Documents/GitHub/CS8803-3DU/Oculus Quest test/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
     </Reference>

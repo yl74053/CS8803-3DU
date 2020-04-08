@@ -13,11 +13,14 @@ public class ButtonListener : MonoBehaviour
     public UnityEvent defaultevent;
 
     public OVRHand lefthand;
+    public OVRHand righthand;
 
     public Material cur;
     public Material[] materials;
 
+
     bool eventtrigger;
+    bool boxtrigger;
 
     public int count = 0;
 
@@ -31,18 +34,32 @@ public class ButtonListener : MonoBehaviour
 
     void InitialEvent(InteractableStateArgs state)
     {
+        //print(state.Interactable);
         if (state.NewInteractableState == InteractableState.ProximityState)
         {
-            GetComponent<MeshRenderer>().material = cur;
+            //GetComponent<MeshRenderer>().material = cur;
+            boxtrigger = true;
         } else if (state.NewInteractableState == InteractableState.ContactState)
         {
-            GetComponent<MeshRenderer>().material = cur;
+            //GetComponent<MeshRenderer>().material = cur;
+            boxtrigger = true;
+            /*if (righthand.GetFingerIsPinching(OVRHand.HandFinger.Index) && righthand.GetFingerPinchStrength(OVRHand.HandFinger.Index) > 0.8)
+            {
+                GetComponent<Transform>().position = righthand.GetComponent<Transform>().position;
+            }
+            if (lefthand.GetFingerIsPinching(OVRHand.HandFinger.Index) && lefthand.GetFingerPinchStrength(OVRHand.HandFinger.Index) > 0.8)
+            {
+                GetComponent<Transform>().position = lefthand.GetComponent<Transform>().position;
+            }*/
+
         } else if (state.NewInteractableState == InteractableState.ActionState)
         {
             actionevent.Invoke();
         } else
         {
             defaultevent.Invoke();
+            boxtrigger = false;
+            cur = materials[0];
         }
     }
 
@@ -54,29 +71,40 @@ public class ButtonListener : MonoBehaviour
         bool isRingFingerPinching = lefthand.GetFingerIsPinching(OVRHand.HandFinger.Ring);
         bool isPinkyFingerPinching = lefthand.GetFingerIsPinching(OVRHand.HandFinger.Pinky);
 
-        if (isIndexFingerPinching && eventtrigger)
+        bool isRIndexFingerPinching = righthand.GetFingerIsPinching(OVRHand.HandFinger.Index);
+        bool isRMiddleFingerPinching = righthand.GetFingerIsPinching(OVRHand.HandFinger.Middle);
+        bool isRRingFingerPinching = righthand.GetFingerIsPinching(OVRHand.HandFinger.Ring);
+        bool isRPinkyFingerPinching = righthand.GetFingerIsPinching(OVRHand.HandFinger.Pinky);
+
+        if ( (isIndexFingerPinching || isRIndexFingerPinching) && eventtrigger)
         {
             cur = materials[1];
             eventtrigger = false;
         }
-        else if (isMiddleFingerPinching && eventtrigger)
+        else if ( (isMiddleFingerPinching || isRMiddleFingerPinching) && eventtrigger)
         {
             cur = materials[2];
             eventtrigger = false;
         }
-        else if (isRingFingerPinching && eventtrigger)
+        else if ( (isRingFingerPinching || isRRingFingerPinching) && eventtrigger)
         {
             cur = materials[3];
             eventtrigger = false;
         }
-        else if (isPinkyFingerPinching && eventtrigger)
+        else if ( (isPinkyFingerPinching || isRPinkyFingerPinching) && eventtrigger)
         {
             cur = materials[4];
             eventtrigger = false;
         }
-        if (!eventtrigger && !isIndexFingerPinching && !isMiddleFingerPinching && !isRingFingerPinching && !isPinkyFingerPinching)
+        if (!eventtrigger && !isIndexFingerPinching && !isMiddleFingerPinching && !isRingFingerPinching && !isPinkyFingerPinching &&
+            !isRIndexFingerPinching && !isRMiddleFingerPinching && !isRRingFingerPinching && !isRPinkyFingerPinching)
         {
             eventtrigger = true;
+        }
+
+        if (boxtrigger)
+        {
+            GetComponent<MeshRenderer>().material = cur;
         }
     }
 }

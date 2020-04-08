@@ -86,11 +86,11 @@
     <None Include="Assets\Oculus\VR\Editor\Oculus.VR.Editor.asmdef" />
     <None Include="Assets\Oculus\VR\Editor\network_sec_config.xml" />
     <None Include="Assets\Oculus\VR\Editor\AndroidManifest.OVRSubmission.xml" />
-    <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/Yi Li/Documents/GitHub/CS8803-3DU/Oculus Quest test/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>C:/Users/Yi Li/Documents/GitHub/CS8803-3DU/Oculus Quest test/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>C:/Users/Yi Li/Documents/GitHub/CS8803-3DU/Oculus Quest test/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.TestRunner">
       <HintPath>C:/Users/Yi Li/Documents/GitHub/CS8803-3DU/Oculus Quest test/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
