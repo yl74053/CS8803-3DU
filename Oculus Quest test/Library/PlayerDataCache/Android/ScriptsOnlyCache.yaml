@@ -72,45 +72,45 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11542}
     - Class: 114
-      Script: {instanceID: 12032}
+      Script: {instanceID: 12024}
     - Class: 114
-      Script: {instanceID: 12040}
+      Script: {instanceID: 12034}
     - Class: 114
-      Script: {instanceID: 12100}
+      Script: {instanceID: 12042}
     - Class: 114
-      Script: {instanceID: 12116}
+      Script: {instanceID: 12102}
     - Class: 114
-      Script: {instanceID: 12354}
+      Script: {instanceID: 12118}
     - Class: 114
-      Script: {instanceID: 12372}
+      Script: {instanceID: 12356}
     - Class: 114
-      Script: {instanceID: 12776}
+      Script: {instanceID: 12374}
     - Class: 114
-      Script: {instanceID: 12804}
+      Script: {instanceID: 12778}
     - Class: 114
-      Script: {instanceID: 12894}
+      Script: {instanceID: 12806}
     - Class: 114
       Script: {instanceID: 12896}
     - Class: 114
-      Script: {instanceID: 12938}
+      Script: {instanceID: 12898}
     - Class: 114
-      Script: {instanceID: 13042}
+      Script: {instanceID: 12940}
     - Class: 114
-      Script: {instanceID: 13142}
+      Script: {instanceID: 13044}
     - Class: 114
-      Script: {instanceID: 13172}
+      Script: {instanceID: 13144}
     - Class: 114
-      Script: {instanceID: 13434}
+      Script: {instanceID: 13174}
     - Class: 114
-      Script: {instanceID: 13656}
+      Script: {instanceID: 13436}
     - Class: 114
-      Script: {instanceID: 14060}
+      Script: {instanceID: 13658}
     - Class: 114
-      Script: {instanceID: 14166}
+      Script: {instanceID: 14062}
     - Class: 114
-      Script: {instanceID: 14258}
+      Script: {instanceID: 14168}
     - Class: 114
-      Script: {instanceID: 20328}
+      Script: {instanceID: 14260}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -512,6 +512,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: AnimationPlayableAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 9b9533cc43a00584d79972911fa0947c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ButtonListener
   - hash:
       serializedVersion: 2
       Hash: 08620780b69fc9e76cd687022de1f5b6
@@ -1724,12 +1730,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 88212840b287cae98a034da7b7b45aaf
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ButtonListener
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
